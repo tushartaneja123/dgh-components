@@ -1,0 +1,50 @@
+::ng-deep mat-accordion {
+  .mat-expansion-panel {
+    background: none !important;
+    --mat-expansion-container-shape:0;
+    --mat-expansion-header-expanded-state-height: 48px;
+    .mat-expansion-panel-header {
+      transition: height 0.2s ease-in-out;
+      margin: 5px 0;
+      &.mat-expanded {
+        height: var(--mat-expansion-header-expanded-state-height);
+      }
+    }
+    &:not([class*=mat-elevation-z]) {
+      box-shadow: none !important;
+    }
+    &.outer-panel {
+      .mat-expansion-panel-header {
+        border-left: 3px solid #564cfa;
+        background-color: #554cfa36!important;
+        &:hover
+        {
+          background-color: #554cfa36!important;
+        }
+      }
+    }
+    &.middle-panel {
+     .mat-expansion-panel-body{
+        padding-bottom: 0 !important;
+      }
+      .mat-expansion-panel-header {
+        border-left: 3px solid #dc582a;
+        background-color: #fbeeea!important;
+        &:hover
+        {
+          background-color: #fbeeea!important;
+        }
+      }
+    }
+    &.inner-panel {
+      .mat-expansion-panel-header {
+        border-left: 3px solid #c79c10;
+        background-color: #c79c1015 !important;
+        &:hover
+        {
+          background-color: #c79c1015!important;
+        }
+      }
+    }
+  }
+}

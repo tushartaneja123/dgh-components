@@ -1,0 +1,47 @@
+::ng-deep .mat-mdc-form-field {
+  --field-border-radius: 6px;
+  --field-outline-color: #E4E4E7;
+  --field-bg-color: #F6F6F7;
+  --field-text-color: #1A1A1A;
+  --field-placeholder-color: #A1A1AA;
+  --field-selected-color: #101012;
+  --field-focused-color: #101012;
+
+  --mdc-outlined-text-field-container-shape: var(--field-border-radius);
+  --mdc-outlined-text-field-outline-color: var(--field-outline-color);
+  --mdc-outlined-text-field-outline-width: 2px;
+  --mdc-outlined-text-field-hover-outline-color: var(--field-outline-color);
+  --mdc-outlined-text-field-focus-outline-color: var(--field-focused-color);
+  --mdc-outlined-text-field-caret-color:var(--field-text-color);
+  --mdc-filled-text-field-caret-color:var(--field-text-color);
+
+  .mat-mdc-form-field-subscript-wrapper {
+    display: none !important;
+  }
+  .mat-mdc-select-value-text,
+  .mat-mdc-floating-label,
+  .mat-mdc-text-field .mdc-text-field__input{
+    color: var(--field-selected-color) !important;
+  }
+  .mat-mdc-input-element::placeholder,
+  .mat-mdc-select-placeholder{
+    color: var( --field-placeholder-color ) !important;
+  }
+  .mdc-line-ripple,
+  .mdc-line-ripple--deactivating {
+    display: none;
+  }
+  .mdc-text-field--filled {
+    background-color: var(--field-bg-color) !important;
+    border-radius: var(--field-border-radius);
+    &:hover {
+      background-color: #fff !important;
+    }
+  }
+  .mat-mdc-select-arrow {
+    display: none;
+  }
+}
+.label-style {
+  color: #1A1A1A;
+}

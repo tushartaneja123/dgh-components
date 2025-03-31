@@ -1,0 +1,193 @@
+//------------------------------
+//-----Html Root Element---------
+//------------------------------
+html{
+  font-size: 62.5%;  // 62.5% of 16px = 10px 
+  scroll-behavior: smooth;
+}
+@media screen and (max-width: 1399px){
+  html{
+    font-size: 58%; // 58% of 16px = 9.28px
+  }
+}
+@media screen and (max-width: 991px){
+  html{
+    font-size: 56%; // 56% of 16px = 8.96px 
+  }
+}
+
+//------------------
+//-----Body---------
+//-------------------
+body {
+  margin: 0;
+  font-family: 'Nunito-r';
+  font-size: 1.4rem;
+}
+
+//------------------
+//-----Font Face----
+//------------------
+@font-face {
+  font-family: 'Nunito-r';
+  src: url(../src/assets/fonts/Nunito-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Nunito-m';
+  src: url(../src/assets/fonts/Nunito-Medium.ttf);
+}
+
+
+@font-face {
+  font-family: 'Nunito-b';
+  src: url(../src/assets/fonts/Nunito-Bold.ttf);
+}
+
+//-----------------------
+//---Html Root----------
+//-----------------------
+:root {
+  --primary: #564cfa;
+  --secondary: #564cfa;
+  --warn: #d3273e;
+}
+
+//-------------------------------
+//---Scrollbar Styling----------
+//-------------------------------
+
+::-webkit-scrollbar {
+  width: 20px;
+  height: 20px;
+}
+
+::-webkit-scrollbar-track:vertical {
+  background: #E4EAF2;
+  border-left: 9px solid white;
+  border-right: 9px solid white;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+  background: #B6C8DE;
+  border-left: 8px solid white;
+  border-right: 8px solid white;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-track:horizontal {
+  background: #E4EAF2;
+  border-top: 9px solid white;
+  border-bottom: 9px solid white;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  background: #B6C8DE;
+  border-top: 8px solid white;
+  border-bottom: 8px solid white;
+  border-radius: 8px;
+}
+
+//--------------------------
+// ---Color Styling---------
+//--------------------------
+.primary {
+  color: var(--primary);
+}
+
+.secondary {
+  color: var(--secondary)
+}
+
+.warn {
+  color: var(--warn);
+}
+
+
+//------------------------
+//---Fonts Styling--------
+//------------------------
+
+.heading-1,
+h1 {
+  font-size: 2.4rem !important;
+  font-weight: 700 !important;
+}
+
+.heading-2,
+h2 {
+  font-size: 1.8rem !important;
+  font-weight: 700 !important;
+}
+
+.subtitle-1,
+h3 {
+  font-size: 1.6rem !important;
+  font-weight: 700 !important;
+}
+
+.subtitle-2,
+h4 {
+  font-size: 1.2rem !important;
+  font-weight: 700 !important;
+}
+
+.f-10 {
+  font-size: 1rem;
+}
+
+.f-12 {
+  font-size: 1.2rem;
+}
+
+.f-14 {
+  font-size: 1.4rem;
+}
+
+.f-16 {
+  font-size: 1.6rem;
+}
+
+.f-18 {
+  font-size: 1.8rem;
+}
+
+.f-20 {
+  font-size: 2.0rem;
+}
+
+.f-22{
+  font-size: 2.2rem;
+}
+
+.f-24{
+  font-size: 2.4rem;
+}
+
+.f-28{
+  font-size: 2.8rem;
+}
+
+.medium-font {
+  font-family: 'Nunito-m' !important;
+}
+
+.bold-font {
+  font-family: 'Nunito-b' !important;
+}
+
+// --------------------------------------
+// -----------Mat Card Styling-----------
+// --------------------------------------
+.mat-mdc-card {
+  box-shadow: 0rem 0.308rem 2rem #74799326 !important;
+}
+
+// --------------------------------------
+// -----------Additional Styling-----------
+// --------------------------------------
+.cursor-pointer{
+  cursor: pointer;
+}

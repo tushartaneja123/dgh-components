@@ -1,0 +1,112 @@
+<mat-card class="p-4">
+  <p class="heading-2 m-0">Form Fields</p>
+</mat-card>
+
+<div class="row align-items-center g-4 mt-2">
+
+  <div class="col-sm-6 col-lg-4">
+    <mat-card class="p-4 h-100">
+      <p class="bold-font f-16 m-0">Single Select</p>
+      <hr>
+      <span class="bold-font label-style pb-1">Label*</span>
+      <mat-form-field appearance="outline">
+        <mat-select placeholder="Select">
+          <mat-option value="0">India</mat-option>
+          <mat-option value="1">Australia</mat-option>
+          <mat-option value="2">Japan</mat-option>
+          <mat-option value="3">Canada</mat-option>
+          <mat-option value="04">China</mat-option>
+        </mat-select>
+        <img matSuffix class="d-inline-block pe-3" src="/Components/Icon.svg" />
+      </mat-form-field>
+    </mat-card>
+  </div>
+
+  <div class="col-sm-6 col-lg-4">
+    <mat-card class="p-4 h-100">
+      <p class="bold-font f-16 m-0">Multi Select</p>
+      <hr>
+      <span class="bold-font label-style pb-1">Label*</span>
+      <mat-form-field appearance="outline">
+        <mat-select multiple placeholder="Select">
+          <mat-option value="0">India</mat-option>
+          <mat-option value="1">Australia</mat-option>
+          <mat-option value="2">Japan</mat-option>
+          <mat-option value="3">Canada</mat-option>
+          <mat-option value="04">China</mat-option>
+        </mat-select>
+        <img matSuffix class="d-inline-block pe-3" src="/Components/Icon.svg" />
+      </mat-form-field>
+    </mat-card>
+  </div>
+
+  <div class="col-sm-6 col-lg-4">
+    <mat-card class="p-4 h-100">
+      <p class="bold-font f-16 m-0">Autocomplete</p>
+      <hr>
+      <span class="bold-font label-style pb-1">Label*</span>
+      <mat-form-field appearance="outline">
+        <input #input type="text" placeholder="Pick one" matInput [formControl]="myControl" [matAutocomplete]="auto"
+          (input)="filter()" (focus)="filter()">
+        <mat-autocomplete requireSelection #auto="matAutocomplete">
+          @for (option of filteredOptions; track option) {
+          <mat-option [value]="option">{{option}}</mat-option>
+          }
+        </mat-autocomplete>
+      </mat-form-field>
+    </mat-card>
+  </div>
+
+  <div class="col-sm-6 col-lg-4">
+    <mat-card class="p-4 h-100">
+      <p class="bold-font f-16 m-0">Date Picker Outlined</p>
+      <hr>
+      <span class="bold-font label-style pb-1">Label*</span>
+      <mat-form-field appearance="outline">
+        <input matInput [matDatepicker]="outlineDatePicker" placeholder="MM/DD/YYYY" (click)="outlineDatePicker.open()">
+        <mat-datepicker-toggle matIconSuffix [for]="outlineDatePicker">
+          <img matDatepickerToggleIcon src="Components/calendar.svg" />
+        </mat-datepicker-toggle>
+        <mat-datepicker #outlineDatePicker></mat-datepicker>
+      </mat-form-field>
+    </mat-card>
+  </div>
+
+  <div class="col-sm-6 col-lg-4">
+    <mat-card class="p-4 h-100">
+      <p class="bold-font f-16 m-0">Date Picker Filled</p>
+      <hr>
+      <span class="bold-font label-style pb-1">Label*</span>
+      <mat-form-field appearance="fill">
+        <input matInput [matDatepicker]="fillDatePicker" placeholder="MM/DD/YYYY" (click)="fillDatePicker.open()">
+        <mat-datepicker-toggle matIconSuffix [for]="fillDatePicker">
+          <img matDatepickerToggleIcon src="Components/calendar.svg" />
+        </mat-datepicker-toggle>
+        <mat-datepicker #fillDatePicker></mat-datepicker>
+      </mat-form-field>
+    </mat-card>
+  </div>
+
+  <div class="col-sm-6 col-lg-4">
+    <mat-card class="p-4 h-100">
+      <p class="bold-font f-16 m-0">Input</p>
+      <hr>
+      <span class="bold-font label-style pb-1">Label*</span>
+      <mat-form-field appearance="outline">
+        <input matInput placeholder="Type here">
+      </mat-form-field>
+    </mat-card>
+  </div>
+
+  <div class="col-sm-6 col-lg-4">
+    <mat-card class="p-4 h-100">
+      <p class="bold-font f-16 m-0">Input</p>
+      <hr>
+      <span class="bold-font label-style pb-1">Label*</span>
+      <mat-form-field appearance="fill">
+        <input matInput placeholder="Type here">
+      </mat-form-field>
+    </mat-card>
+  </div>
+
+</div>
