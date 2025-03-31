@@ -45,3 +45,12 @@
 .label-style {
   color: #1A1A1A;
 }
+.custom-mat-option {
+  max-height: 200px;
+}
+::ng-deep .custom-multi-select-panel.mat-mdc-select-panel {
+  overflow: inherit !important;
+  max-height: none !important;
+}
+
+

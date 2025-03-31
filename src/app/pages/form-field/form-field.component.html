@@ -6,10 +6,28 @@
 
   <div class="col-sm-6 col-lg-4">
     <mat-card class="p-4 h-100">
-      <p class="bold-font f-16 m-0">Single Select</p>
+      <p class="bold-font f-16 m-0">Single Select (Outline)</p>
       <hr>
-      <span class="bold-font label-style pb-1">Label*</span>
+      <p class="bold-font label-style m-0 pb-1">Label*</p>
       <mat-form-field appearance="outline">
+        <mat-select placeholder="Select">
+          <mat-option value="0">India</mat-option>
+          <mat-option value="1">Australia</mat-option>
+          <mat-option value="2">Japan</mat-option>
+          <mat-option value="3">Canada</mat-option>
+          <mat-option value="04">China</mat-option>
+        </mat-select>
+        <img matSuffix class="d-inline-block pe-3" src="/Components/Icon.svg" />
+      </mat-form-field>
+    </mat-card>
+  </div>
+
+  <div class="col-sm-6 col-lg-4">
+    <mat-card class="p-4 h-100">
+      <p class="bold-font f-16 m-0">Single Select (Fill)</p>
+      <hr>
+      <p class="bold-font label-style m-0 pb-1">Label*</p>
+      <mat-form-field appearance="fill">
         <mat-select placeholder="Select">
           <mat-option value="0">India</mat-option>
           <mat-option value="1">Australia</mat-option>
@@ -26,7 +44,7 @@
     <mat-card class="p-4 h-100">
       <p class="bold-font f-16 m-0">Multi Select</p>
       <hr>
-      <span class="bold-font label-style pb-1">Label*</span>
+      <p class="bold-font label-style pb-1 m-0">Label*</p>
       <mat-form-field appearance="outline">
         <mat-select multiple placeholder="Select">
           <mat-option value="0">India</mat-option>
@@ -39,12 +57,46 @@
       </mat-form-field>
     </mat-card>
   </div>
+  
+  <div class="col-sm-6 col-lg-4">
+    <mat-card class="p-4 h-100">
+  <form [formGroup]="multipleSelectForm">
+    <p class="bold-font f-16 m-0">Searchable Multi Select</p>
+      <hr>
+      <p class="bold-font label-style pb-1 m-0">Label*</p>
+        <mat-form-field appearance="outline" class="w-100">
+            <mat-select (openedChange)="openedChange($event)" placeholder="Select"
+                panelClass="custom-multi-select-panel" formControlName="dropdownControl" multiple >
+                <mat-form-field appearance="outline" class="w-100 px-2">
+                    <input #searchTextBox matInput type="text" placeholder="Type here to search..."
+                        (keyup)="filterApply($event)">
+                    <div *ngIf="searchTextBox.value" matSuffix (click)="clearSearchBox()">
+                        <mat-icon class="cursor-pointer me-2">close</mat-icon>
+                    </div>
+                </mat-form-field>
+
+                <div *ngIf="selectedToppingList.length === 0">
+                    <p class="m-0 ps-4 pt-3 f-16">No results found!</p>
+                </div>
+
+                <div class="custom-mat-option overflow-auto mt-3">
+                     @for (topping of selectedToppingList; track $index) {
+                    <mat-option [value]="topping.id">{{topping.name}}</mat-option>
+                }
+                </div>
+
+            </mat-select>
+            <img matSuffix class="d-inline-block pe-3" src="/Components/Icon.svg" />
+        </mat-form-field>
+      </form>
+    </mat-card>
+  </div>
 
   <div class="col-sm-6 col-lg-4">
     <mat-card class="p-4 h-100">
-      <p class="bold-font f-16 m-0">Autocomplete</p>
+      <p class="bold-font f-16 m-0">Autocomplete (Outline)</p>
       <hr>
-      <span class="bold-font label-style pb-1">Label*</span>
+      <p class="bold-font label-style m-0 pb-1">Label*</p>
       <mat-form-field appearance="outline">
         <input #input type="text" placeholder="Pick one" matInput [formControl]="myControl" [matAutocomplete]="auto"
           (input)="filter()" (focus)="filter()">
@@ -59,9 +111,26 @@
 
   <div class="col-sm-6 col-lg-4">
     <mat-card class="p-4 h-100">
-      <p class="bold-font f-16 m-0">Date Picker Outlined</p>
+      <p class="bold-font f-16 m-0">Autocomplete (Fill)</p>
       <hr>
-      <span class="bold-font label-style pb-1">Label*</span>
+      <p class="bold-font label-style m-0 pb-1">Label*</p>
+      <mat-form-field appearance="fill">
+        <input #input type="text" placeholder="Pick one" matInput [formControl]="myControl" [matAutocomplete]="auto"
+          (input)="filter()" (focus)="filter()">
+        <mat-autocomplete requireSelection #auto="matAutocomplete">
+          @for (option of filteredOptions; track option) {
+          <mat-option [value]="option">{{option}}</mat-option>
+          }
+        </mat-autocomplete>
+      </mat-form-field>
+    </mat-card>
+  </div>
+
+  <div class="col-sm-6 col-lg-4">
+    <mat-card class="p-4 h-100">
+      <p class="bold-font f-16 m-0">Date Picker (Outline)</p>
+      <hr>
+      <p class="bold-font label-style m-0 pb-1">Label*</p>
       <mat-form-field appearance="outline">
         <input matInput [matDatepicker]="outlineDatePicker" placeholder="MM/DD/YYYY" (click)="outlineDatePicker.open()">
         <mat-datepicker-toggle matIconSuffix [for]="outlineDatePicker">
@@ -74,9 +143,9 @@
 
   <div class="col-sm-6 col-lg-4">
     <mat-card class="p-4 h-100">
-      <p class="bold-font f-16 m-0">Date Picker Filled</p>
+      <p class="bold-font f-16 m-0">Date Picker (Fill)</p>
       <hr>
-      <span class="bold-font label-style pb-1">Label*</span>
+      <p class="bold-font label-style m-0 pb-1">Label*</p>
       <mat-form-field appearance="fill">
         <input matInput [matDatepicker]="fillDatePicker" placeholder="MM/DD/YYYY" (click)="fillDatePicker.open()">
         <mat-datepicker-toggle matIconSuffix [for]="fillDatePicker">
@@ -89,9 +158,9 @@
 
   <div class="col-sm-6 col-lg-4">
     <mat-card class="p-4 h-100">
-      <p class="bold-font f-16 m-0">Input</p>
+      <p class="bold-font f-16 m-0">Input (Outline)</p>
       <hr>
-      <span class="bold-font label-style pb-1">Label*</span>
+      <p class="bold-font label-style m-0 pb-1">Label*</p>
       <mat-form-field appearance="outline">
         <input matInput placeholder="Type here">
       </mat-form-field>
@@ -100,9 +169,9 @@
 
   <div class="col-sm-6 col-lg-4">
     <mat-card class="p-4 h-100">
-      <p class="bold-font f-16 m-0">Input</p>
+      <p class="bold-font f-16 m-0">Input (Fill)</p>
       <hr>
-      <span class="bold-font label-style pb-1">Label*</span>
+      <p class="bold-font label-style m-0 pb-1">Label*</p>
       <mat-form-field appearance="fill">
         <input matInput placeholder="Type here">
       </mat-form-field>
